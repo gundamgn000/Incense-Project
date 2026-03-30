@@ -1,0 +1,298 @@
+/* ==========================================================================
+   品牌故事頁面專屬 (About Page)
+   ========================================================================== */
+
+.about-page {
+    background-color: #f7f7f7;
+    padding-bottom: 80px;
+}
+
+/* 品牌故事 Hero 區塊 */
+.about-hero {
+    background-color: #f1ede8;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 0 0 32px;
+}
+
+
+.about-hero-container {
+    display: flex;
+    align-items: center;
+    min-height: 520px;
+}
+
+.about-hero-image {
+    flex: 0 0 50%;
+    height: 520px;
+}
+
+.about-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-hero-text {
+    flex: 0 0 50%;
+    padding: 0 80px;
+}
+
+.about-subtitle {
+    color: #8B6B4A;
+    letter-spacing: 4px;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.about-hero-text h1 {
+    font-size: 38px;
+    font-family: 'Noto Serif TC', serif;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* Hero 下方延伸圖片區 */
+
+.about-story-gallery {
+    padding: 16px 32px 0;
+}
+
+.about-story-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.story-gallery-item {
+    border-radius: 18px;
+    overflow: hidden;
+}
+.story-gallery-item.large {
+    min-height: 260px;
+}
+
+.story-gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 核心價值三欄式佈局 */
+.values-grid {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.value-item {
+    flex: 1;
+    text-align: center;
+    padding: 40px 20px;
+    background: rgb(241, 234, 225);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+}
+
+.value-num {
+    font-size: 48px;
+    color: #d3b692;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+    font-family: serif;
+}
+
+/* --- 修正品牌核心價值標題置中 --- */
+.section-title {
+    text-align: center;     
+    margin-bottom: 60px;     
+    width: 100%;            
+}
+
+.section-title h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.section-title p {
+    color: #8B6B4A;          
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+
+.values-grid {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto 100px;    
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* 圖文錯落 Row */
+.about-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.detail-row {
+    display: flex;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.detail-img {
+    flex: 0 0 55%;
+    height: 480px;
+}
+
+.detail-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-content {
+    flex: 0 0 45%;
+    padding: 60px;
+}
+
+/* ==========================================================================
+   全站通用導覽列 (Navbar)
+   ========================================================================== */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 20px;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-menu a.active, .nav-menu a:hover {
+    color: #8B6B4A;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.nav-icons a {
+    text-decoration: none;
+    color: #666;
+}
+
+/* ==========================================================================
+   全站通用頁尾 (Footer)
+   ========================================================================== */
+.footer-main {
+    background-color: #f1ede8;
+    padding: 80px 0 30px;
+    margin-top: 100px;
+}
+
+.footer-top-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    padding: 0 20px;
+}
+
+.footer-logo-square {
+    width: 80px;
+    height: 80px;
+    background-color: #d1d1d1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+}
+
+.footer-links-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.footer-column p, .footer-column ul li {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.8;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #777;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #8B6B4A;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
