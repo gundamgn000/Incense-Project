@@ -702,13 +702,14 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f7f7f7; color
 
     /* 讓卡片變 2 欄（現在你是 3 欄） */
     .featured-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        justify-items: center;
+        
     }
 
     /* 卡片整體縮矮 */
     .product-card {
-        border-radius: 12px;
+        width: 100%;
+        max-width: 180px;
     }
 
     /* 圖片高度降低 */
