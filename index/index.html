@@ -12,28 +12,21 @@
 
     <header class="header">
         <div class="header-container">
-            <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
             <div class="logo">Logo</div>
 
-            <nav class="nav-menu" id="navMenu">
-                <div class="menu-links">
-                    <a href="../index/index.html">首頁</a>
-                    <a href="../about/about.html">品牌故事</a>
-                    <a href="../Product/product.html">商品</a>
-                    <a href="#">聯絡我們</a>
-                </div>
+            
 
-                <div class="mobile-menu-actions">
-                    <a href="#"><span class="icon">🔍</span> 搜尋商品</a>
-                    <a href="#"><span class="icon">👤</span> 會員中心</a>
-                    <a href="#"><span class="icon">🛒</span> 購物車 (2)</a>
-                </div>
+            <nav class="nav-menu">
+                <a href="../index/index.html">首頁</a>
+                <a href="../about/about.html">品牌故事</a>
+                <a href="../Product/product.html">商品</a>
+                <a href="#">聯絡我們</a>
             </nav>
 
-            <div class="nav-icons desktop-only">
+            <div class="nav-icons">
                 <a href="#">🔍搜尋商品</a>
                 <a href="#">會員</a>
-                <a href="#">🛒購物車 (2) (2)</a>
+                <a href="#">🛒購物車 (2)</a>
             </div>
         </div>
     </header>
@@ -216,30 +209,6 @@
         // 每 4 秒自動切換
         setInterval(nextSlide, 4000);
     </script>
-
-    <script>
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.querySelector('.nav-menu'); // 抓取你的 .nav-menu
-
-    // 自動建立遮罩層
-    const overlay = document.createElement('div');
-    overlay.className = 'menu-overlay';
-    document.body.appendChild(overlay);
-
-    function toggleMenu() {
-        navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        
-        // 切換按鈕圖示：開啟時變 X，關閉時回 ☰
-        mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
-        
-        // 防止手機版選單開啟時背景還能捲動
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
-    }
-
-    mobileMenuBtn.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
-</script>
 
 </body>
 </html>
