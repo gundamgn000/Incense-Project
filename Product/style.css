@@ -501,4 +501,467 @@ a:hover {
         align-items: center;
         text-align: center;
     }
+
+    /* =========================
+   商品頁 手機板專用
+   不動桌機版，只覆蓋 768px 以下
+========================= */
+@media (max-width: 768px) {
+    /* --- Header / Navbar --- */
+    .header {
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+    }
+
+    .header-container {
+        padding: 0 16px;
+        gap: 12px;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 22px;
+        flex: 1;
+        text-align: center;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: transparent;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 84%;
+        max-width: 320px;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 88px 24px 28px;
+        gap: 28px;
+        transition: left 0.35s ease;
+        z-index: 1200;
+        box-shadow: 8px 0 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu-links a {
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 14px 0;
+        border-bottom: 1px solid #f1f1f1;
+        text-align: left;
+    }
+
+    .mobile-menu-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .mobile-menu-actions a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        color: #666;
+    }
+
+    /* --- 主商品區 --- */
+    .main-content {
+        margin: 20px auto 0;
+        padding: 0 12px;
+    }
+
+    .product-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;   /* 核心：手機改單欄 */
+        gap: 24px;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .product-gallery,
+    .product-info {
+        width: 100%;
+    }
+
+    .main-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        border-radius: 14px;
+        object-fit: cover;
+    }
+
+    .thumbnail-list {
+        gap: 10px;
+        margin-top: 12px;
+        justify-content: flex-start;
+    }
+
+    .thumbnail {
+        width: 58px;
+        height: 58px;
+        border-radius: 8px;
+    }
+
+    .product-title {
+        font-size: 24px;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .product-price {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .product-description {
+        font-size: 13px;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .product-description p {
+        margin-bottom: 4px;
+    }
+
+    .product-specs {
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .product-specs li {
+        margin-bottom: 6px;
+        padding-left: 14px;
+    }
+
+    .quantity-selector {
+        gap: 18px;
+        font-size: 15px;
+        margin-bottom: 22px;
+    }
+
+    .qty-btn {
+        font-size: 20px;
+        line-height: 1;
+        padding: 2px 6px;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+        padding: 13px 0;
+        border-radius: 999px;
+        font-size: 15px;
+    }
+
+    /* --- 推薦商品區 --- */
+    .footer {
+        margin-top: 44px;
+    }
+
+    .recommend-section {
+        padding: 44px 12px 28px;
+    }
+
+    .recommend-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .recommend-carousel {
+        width: 100%;
+        position: relative;
+    }
+
+    .carousel-btn {
+        display: none; /* 手機直接隱藏左右箭頭 */
+    }
+
+    .recommend-slider {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 6px 0 8px;
+        margin: 0;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .recommend-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .recommend-track {
+        display: flex;
+        gap: 14px;
+        width: max-content;
+        transition: none;
+        padding-right: 12px;
+    }
+
+    .recommend-track .product-card {
+        flex: 0 0 220px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+        scroll-snap-align: start;
+    }
+
+    .recommend-track .product-card img {
+        height: 150px;
+    }
+
+    .card-info {
+        padding: 14px;
+    }
+
+    .card-info h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .card-subtitle {
+        font-size: 11px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        height: auto;
+        min-height: 32px;
+    }
+
+    .card-footer {
+        padding-top: 10px;
+        gap: 10px;
+    }
+
+    .card-price {
+        font-size: 13px;
+    }
+
+    .view-product {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* --- Footer 資訊區 --- */
+    .footer-info-section {
+        padding: 44px 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 28px;
+        padding: 0 20px;
+    }
+
+    .footer-logo-block {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-logo {
+        width: 76px;
+        height: 76px;
+        font-size: 20px;
+    }
+
+    .footer-text-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .footer-col h4 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        font-size: 13px;
+        margin-bottom: 6px;
+        line-height: 1.7;
+    }
+
+    .copyright {
+        padding: 18px 14px;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================
+   更小手機
+========================= */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .mobile-menu-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+    }
+
+    .nav-menu {
+        padding: 80px 20px 24px;
+    }
+
+    .menu-links a {
+        font-size: 17px;
+        padding: 12px 0;
+    }
+
+    .mobile-menu-actions a {
+        font-size: 14px;
+    }
+
+    .main-content {
+        padding: 0 10px;
+    }
+
+    .product-wrapper {
+        padding: 16px;
+        gap: 20px;
+        border-radius: 16px;
+    }
+
+    .main-image img {
+        max-height: 320px;
+    }
+
+    .thumbnail {
+        width: 52px;
+        height: 52px;
+    }
+
+    .product-title {
+        font-size: 22px;
+    }
+
+    .product-price {
+        font-size: 17px;
+        margin-bottom: 16px;
+    }
+
+    .product-description,
+    .product-specs {
+        font-size: 12px;
+    }
+
+    .quantity-selector {
+        gap: 16px;
+        font-size: 14px;
+    }
+
+    .add-to-cart-btn {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+
+    .recommend-section {
+        padding: 40px 10px 24px;
+    }
+
+    .recommend-title {
+        font-size: 22px;
+    }
+
+    .recommend-track {
+        gap: 12px;
+    }
+
+    .recommend-track .product-card {
+        flex: 0 0 200px;
+    }
+
+    .recommend-track .product-card img {
+        height: 138px;
+    }
+
+    .card-info {
+        padding: 12px;
+    }
+
+    .card-info h3 {
+        font-size: 13px;
+    }
+
+    .card-subtitle {
+        font-size: 10px;
+    }
+
+    .card-price {
+        font-size: 12px;
+    }
+
+    .view-product {
+        font-size: 10px;
+    }
+
+    .footer-info-section {
+        padding: 38px 0;
+    }
+
+    .footer-container {
+        padding: 0 16px;
+        gap: 24px;
+    }
+
+    .footer-logo {
+        width: 70px;
+        height: 70px;
+        font-size: 18px;
+    }
+
+    .footer-text-grid {
+        gap: 18px;
+    }
+
+    .footer-col h4 {
+        font-size: 14px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        font-size: 12px;
+    }
+}
 }
