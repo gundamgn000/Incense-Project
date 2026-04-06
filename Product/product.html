@@ -14,10 +14,27 @@
         <div class="header-container">
             <div class="logo">Logo</div>
 
+            <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <nav class="nav-menu">
                 <a href="../index/index.html">首頁</a>
                 <a href="../about/about.html">品牌故事</a>
-                <a href="../Product/product.html" class="active">商品</a>
+
+                <div class="nav-dropdown">
+                    <a href="../Product/product.html" class="active nav-dropdown-trigger">商品</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="../Product/product.html">所有商品</a>
+                        <a href="../Product/product.html">香氛</a>
+                        <a href="../Product/product.html">精油</a>
+                        <a href="../Product/product.html">乳霜</a>
+                        <a href="../Product/product.html">擴香</a>
+                    </div>
+                </div>
+
                 <a href="#footer">聯絡我們</a>
             </nav>
 
@@ -25,6 +42,36 @@
                 <a href="#">🔍 搜尋商品</a>
                 <a href="#">會員</a>
                 <a href="#">🛒購物車 (2)</a>
+            </div>
+        </div>
+
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer-inner">
+                <a href="../index/index.html" class="drawer-link">首頁</a>
+                <a href="../about/about.html" class="drawer-link">品牌故事</a>
+
+                <div class="drawer-dropdown">
+                    <button class="drawer-dropdown-toggle active" id="drawerDropdownToggle" type="button">
+                        商品分類
+                        <span class="drawer-arrow">⌄</span>
+                    </button>
+
+                    <div class="drawer-submenu" id="drawerSubmenu">
+                        <a href="../Product/product.html" class="drawer-sublink active">所有商品</a>
+                        <a href="../Product/product.html" class="drawer-sublink">香氛</a>
+                        <a href="../Product/product.html" class="drawer-sublink">精油</a>
+                        <a href="../Product/product.html" class="drawer-sublink">乳霜</a>
+                        <a href="../Product/product.html" class="drawer-sublink">擴香</a>
+                    </div>
+                </div>
+
+                <a href="#footer" class="drawer-link">聯絡我們</a>
+
+                <div class="mobile-drawer-icons">
+                    <a href="#">🔍 搜尋商品</a>
+                    <a href="#">會員</a>
+                    <a href="#">🛒購物車 (2)</a>
+                </div>
             </div>
         </div>
     </header>
@@ -149,7 +196,7 @@
         </div>
     </section>
 
-   <footer id="footer" class="footer-main">
+    <footer id="footer" class="footer-main">
         <div class="footer-top-container">
             <div class="footer-logo-box">
                 <div class="footer-logo-square">Logo</div>
@@ -237,6 +284,26 @@
                 thumbnails.forEach(t => t.classList.remove('active'));
                 thumb.classList.add('active');
             });
+        });
+    </script>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
+        const drawerSubmenu = document.getElementById('drawerSubmenu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileDrawer.classList.toggle('active');
+
+            const isExpanded = menuToggle.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        });
+
+        drawerDropdownToggle.addEventListener('click', () => {
+            drawerDropdownToggle.classList.toggle('active');
+            drawerSubmenu.classList.toggle('active');
         });
     </script>
 

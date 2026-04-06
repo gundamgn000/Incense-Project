@@ -199,14 +199,11 @@
 
         function nextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;
-            // 核心修正：
-            // 因為容器寬度是 300%，每一張佔 33.333%
-            // 所以位移必須是 0%, -33.333%, -66.666%
             const offset = currentSlide * (100 / totalSlides);
             slider.style.transform = `translateX(-${offset}%)`;
         }
 
-        // 每 4 秒自動切換
+        
         setInterval(nextSlide, 4000);
     </script>
 
