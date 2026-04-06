@@ -1,7 +1,93 @@
 /* ==========================================================================
+   基礎設定
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s, color 0.3s;
+}
+
+a:hover {
+    opacity: 0.75;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ==========================================================================
+   Navbar（統一 index / product / about）
+   ========================================================================== */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: #333;
+    margin: 0 20px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a.active,
+.nav-menu a:hover {
+    color: #8B6B4A;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.nav-icons a {
+    color: #666;
+}
+
+/* ==========================================================================
    品牌故事頁面專屬 (About Page)
    ========================================================================== */
-
 .about-page {
     background-color: #f7f7f7;
     padding-bottom: 80px;
@@ -16,7 +102,6 @@
     overflow: hidden;
     padding: 0 0 32px;
 }
-
 
 .about-hero-container {
     display: flex;
@@ -55,8 +140,13 @@
     line-height: 1.4;
 }
 
-/* Hero 下方延伸圖片區 */
+.about-hero-text p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.9;
+}
 
+/* Hero 下方延伸圖片區 */
 .about-story-gallery {
     padding: 16px 32px 0;
 }
@@ -71,6 +161,7 @@
     border-radius: 18px;
     overflow: hidden;
 }
+
 .story-gallery-item.large {
     min-height: 260px;
 }
@@ -82,12 +173,38 @@
     display: block;
 }
 
-/* 核心價值三欄式佈局 */
+/* 區塊標題 */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.section-title h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.section-title p {
+    color: #8B6B4A;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* 核心價值 */
+.brand-values {
+    margin-top: 20px;
+}
+
 .values-grid {
     display: flex;
     max-width: 1200px;
     margin: 0 auto 100px;
-    gap: 40px;
+    gap: 30px;
     padding: 0 20px;
 }
 
@@ -113,35 +230,16 @@
     font-family: serif;
 }
 
-/* --- 修正品牌核心價值標題置中 --- */
-.section-title {
-    text-align: center;     
-    margin-bottom: 60px;     
-    width: 100%;            
-}
-
-.section-title h2 {
-    font-family: 'Noto Serif TC', serif;
-    font-size: 32px;
+.value-item h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
     color: #333;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
 }
 
-.section-title p {
-    color: #8B6B4A;          
+.value-item p {
     font-size: 14px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-}
-
-
-.values-grid {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto 100px;    
-    gap: 30px;
-    padding: 0 20px;
+    color: #666;
+    line-height: 1.8;
 }
 
 /* 圖文錯落 Row */
@@ -175,58 +273,22 @@
     padding: 60px;
 }
 
-/* ==========================================================================
-   全站通用導覽列 (Navbar)
-   ========================================================================== */
-.header {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.nav-menu a {
-    text-decoration: none;
+.detail-content h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    line-height: 1.45;
+    margin-bottom: 18px;
     color: #333;
-    margin: 0 20px;
+}
+
+.detail-content p {
     font-size: 15px;
-    transition: color 0.3s;
-}
-
-.nav-menu a.active, .nav-menu a:hover {
-    color: #8B6B4A;
-}
-
-.nav-icons {
-    display: flex;
-    gap: 20px;
-    font-size: 14px;
-}
-
-.nav-icons a {
-    text-decoration: none;
     color: #666;
+    line-height: 1.9;
 }
 
 /* ==========================================================================
-   全站通用頁尾 (Footer)
+   Footer（統一 index / product / about）
    ========================================================================== */
 .footer-main {
     background-color: #f1ede8;
@@ -240,6 +302,10 @@
     display: flex;
     gap: 60px;
     padding: 0 20px;
+}
+
+.footer-logo-box {
+    flex-shrink: 0;
 }
 
 .footer-logo-square {
@@ -266,10 +332,13 @@
     color: #333;
 }
 
-.footer-column p, .footer-column ul li {
+.footer-column p,
+.footer-column li {
     font-size: 14px;
     color: #777;
     line-height: 1.8;
+    list-style: none;
+    margin-bottom: 8px;
 }
 
 .footer-column ul {
@@ -277,13 +346,12 @@
     padding: 0;
 }
 
-.footer-column ul li a {
-    text-decoration: none;
+.footer-column a {
     color: #777;
     transition: color 0.3s;
 }
 
-.footer-column ul li a:hover {
+.footer-column a:hover {
     color: #8B6B4A;
 }
 
@@ -297,12 +365,8 @@
     color: #999;
 }
 
-/* =========================
-   About 頁 手機板專用
-   不動桌機版，只覆蓋 768px 以下
-========================= */
 /* ==========================================================================
-   About 頁 平板版 769px - 1024px
+   平板版 769px - 1024px
    ========================================================================== */
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Navbar */
@@ -326,6 +390,10 @@
 
     .nav-icons {
         gap: 12px;
+        font-size: 13px;
+    }
+
+    .nav-icons a {
         font-size: 13px;
     }
 
@@ -386,7 +454,7 @@
         word-break: break-word;
     }
 
-    /* Hero 下方三圖：平板維持三欄，但拉高 */
+    /* Hero 下方三圖 */
     .about-story-gallery {
         padding: 14px 24px 0;
     }
@@ -423,7 +491,7 @@
         letter-spacing: 3px;
     }
 
-    /* 核心價值：平板三欄 */
+    /* 核心價值 */
     .values-grid {
         display: flex;
         gap: 18px;
@@ -450,7 +518,7 @@
         line-height: 1.75;
     }
 
-    /* Detail 區：平板維持左右排 */
+    /* Detail 區 */
     .about-detail {
         padding: 0 16px;
     }
@@ -520,7 +588,7 @@
     }
 
     .footer-column p,
-    .footer-column ul li {
+    .footer-column li {
         font-size: 12px;
         line-height: 1.7;
     }
@@ -532,7 +600,7 @@
 }
 
 /* ==========================================================================
-   About 頁 手機版 <= 768px
+   手機版 <= 768px
    ========================================================================== */
 @media (max-width: 768px) {
     /* Navbar */
@@ -581,7 +649,9 @@
         font-size: 13px;
     }
 
-    .icon-item {
+    .nav-icons a {
+        font-size: 13px;
+        line-height: 1.4;
         white-space: nowrap;
     }
 
@@ -631,7 +701,7 @@
         line-height: 1.8;
     }
 
-    /* Hero 下方三圖：手機單欄 */
+    /* Hero 下方三圖 */
     .about-story-gallery {
         padding: 8px 20px 0;
     }
@@ -674,7 +744,7 @@
         letter-spacing: 3px;
     }
 
-    /* 核心價值：手機直排 */
+    /* 核心價值 */
     .brand-values {
         margin-top: 44px;
     }
@@ -706,7 +776,7 @@
         line-height: 1.8;
     }
 
-    /* Detail 區：手機上下排 */
+    /* Detail 區 */
     .about-detail {
         padding: 0 16px;
     }
@@ -754,10 +824,16 @@
 
     .footer-top-container {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
         gap: 28px;
         padding: 0 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo-box {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .footer-logo-square {
@@ -778,9 +854,10 @@
     }
 
     .footer-column p,
-    .footer-column ul li {
+    .footer-column li {
         font-size: 13px;
         line-height: 1.7;
+        margin-bottom: 6px;
     }
 
     .footer-bottom {
@@ -813,6 +890,10 @@
 
     .nav-icons {
         gap: 10px;
+        font-size: 12px;
+    }
+
+    .nav-icons a {
         font-size: 12px;
     }
 
@@ -914,7 +995,7 @@
     }
 
     .footer-column p,
-    .footer-column ul li {
+    .footer-column li {
         font-size: 12px;
     }
 }

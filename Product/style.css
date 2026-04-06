@@ -30,7 +30,7 @@ img {
 }
 
 /* ==========================================================================
-   Navbar（對齊 About 風格）
+   Navbar
    ========================================================================== */
 .header {
     background-color: #fff;
@@ -39,6 +39,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 .header-container {
@@ -65,10 +66,12 @@ img {
     color: #333;
     margin: 0 20px;
     font-size: 15px;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active {
     color: #8B6B4A;
 }
 
@@ -217,13 +220,9 @@ img {
 /* ==========================================================================
    推薦商品區
    ========================================================================== */
-.footer {
-    margin-top: 60px;
-}
-
 .recommend-section {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 60px auto 0;
     padding: 56px 20px 40px;
 }
 
@@ -263,11 +262,11 @@ img {
     background-color: #8e7a63;
 }
 
-.recommend-carousel .carousel-btn:first-of-type {
+.carousel-btn-prev {
     left: -22px;
 }
 
-.recommend-carousel .carousel-btn:last-of-type {
+.carousel-btn-next {
     right: -22px;
 }
 
@@ -343,15 +342,15 @@ img {
 }
 
 /* ==========================================================================
-   Footer
+   Footer（統一 index / about / product）
    ========================================================================== */
-.footer-info-section {
+.footer-main {
     background-color: #f1ede8;
     padding: 80px 0 30px;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
-.footer-container {
+.footer-top-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -359,11 +358,11 @@ img {
     padding: 0 20px;
 }
 
-.footer-logo-block {
+.footer-logo-box {
     flex-shrink: 0;
 }
 
-.footer-logo {
+.footer-logo-square {
     width: 80px;
     height: 80px;
     background-color: #d1d1d1;
@@ -374,33 +373,43 @@ img {
     color: #666;
 }
 
-.footer-text-grid {
+.footer-links-grid {
     flex: 1;
     display: grid;
     grid-template-columns: 2fr 1.2fr 1fr 1.5fr;
     gap: 40px;
 }
 
-.footer-col h4 {
+.footer-column h4 {
     font-size: 16px;
     margin-bottom: 20px;
     color: #333;
 }
 
-.footer-col p,
-.footer-col a {
+.footer-column p,
+.footer-column li {
     font-size: 14px;
     color: #777;
     line-height: 1.8;
+    list-style: none;
     margin-bottom: 8px;
-    display: block;
 }
 
-.footer-col a:hover {
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column a {
+    color: #777;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
     color: #8B6B4A;
 }
 
-.copyright {
+.footer-bottom {
     max-width: 1200px;
     margin: 60px auto 0;
     padding-top: 30px;
@@ -414,7 +423,6 @@ img {
    平板版 769px - 1024px
    ========================================================================== */
 @media (min-width: 769px) and (max-width: 1024px) {
-    /* Navbar */
     .header {
         padding: 16px 0;
     }
@@ -438,7 +446,6 @@ img {
         font-size: 13px;
     }
 
-    /* 商品主區 */
     .main-content {
         max-width: 100%;
         margin: 32px auto;
@@ -504,8 +511,6 @@ img {
         padding: 11px 0;
     }
 
-    
-    /* 推薦商品：平板改成可手滑橫向瀏覽 */
     .recommend-section {
         max-width: 100%;
         padding: 48px 16px 32px;
@@ -557,10 +562,6 @@ img {
         scroll-snap-align: start;
     }
 
-    .recommend-track .product-card:nth-child(n+4) {
-        display: block;
-    }
-
     .recommend-track .product-card img {
         height: 160px;
         object-fit: cover;
@@ -594,48 +595,45 @@ img {
 
     .view-product {
         font-size: 11px;
-        white-space: nowrap;
     }
 
     .carousel-btn {
         display: none;
     }
 
-    /* Footer */
-    .footer-info-section {
+    .footer-main {
         padding: 56px 0 24px;
+        margin-top: 80px;
     }
 
-    .footer-container {
-        max-width: 100%;
+    .footer-top-container {
         padding: 0 16px;
         gap: 28px;
     }
 
-    .footer-logo {
+    .footer-logo-square {
         width: 72px;
         height: 72px;
         font-size: 18px;
     }
 
-    .footer-text-grid {
+    .footer-links-grid {
         grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
         gap: 18px;
     }
 
-    .footer-col h4 {
+    .footer-column h4 {
         font-size: 14px;
         margin-bottom: 10px;
     }
 
-    .footer-col p,
-    .footer-col a {
+    .footer-column p,
+    .footer-column li {
         font-size: 12px;
         line-height: 1.7;
-        margin-bottom: 6px;
     }
 
-    .copyright {
+    .footer-bottom {
         margin: 40px 16px 0;
         padding-top: 20px;
     }
@@ -690,7 +688,12 @@ img {
         font-size: 13px;
     }
 
-    /* 商品主區 */
+    .nav-icons a {
+        font-size: 13px;
+        line-height: 1.4;
+        white-space: nowrap;
+    }
+
     .main-content {
         margin: 20px auto 0;
         padding: 0 12px;
@@ -771,11 +774,6 @@ img {
         font-size: 15px;
     }
 
-    /* 推薦商品：手機保留橫滑 */
-    .footer {
-        margin-top: 44px;
-    }
-
     .recommend-section {
         padding: 44px 12px 28px;
     }
@@ -824,10 +822,6 @@ img {
         scroll-snap-align: start;
     }
 
-    .recommend-track .product-card:nth-child(n+4) {
-        display: block;
-    }
-
     .recommend-track .product-card img {
         height: 150px;
     }
@@ -863,45 +857,50 @@ img {
         white-space: nowrap;
     }
 
-    /* Footer */
-    .footer-info-section {
-        margin-top: 0;
+    .footer-main {
+        margin-top: 72px;
         padding: 56px 0 24px;
     }
 
-    .footer-container {
+    .footer-top-container {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
         gap: 28px;
         padding: 0 20px;
+        align-items: center;
+        text-align: center;
     }
 
-    .footer-logo {
+    .footer-logo-box {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-logo-square {
         width: 84px;
         height: 84px;
         font-size: 20px;
     }
 
-    .footer-text-grid {
+    .footer-links-grid {
         width: 100%;
         grid-template-columns: 1fr;
         gap: 24px;
     }
 
-    .footer-col h4 {
-        font-size: 15px;
+    .footer-column h4 {
         margin-bottom: 12px;
+        font-size: 15px;
     }
 
-    .footer-col p,
-    .footer-col a {
+    .footer-column p,
+    .footer-column li {
         font-size: 13px;
-        line-height: 1.7;
         margin-bottom: 6px;
+        line-height: 1.7;
     }
 
-    .copyright {
+    .footer-bottom {
         margin: 36px 16px 0;
         padding-top: 20px;
         font-size: 12px;
@@ -931,6 +930,9 @@ img {
 
     .nav-icons {
         gap: 10px;
+    }
+
+    .nav-icons a {
         font-size: 12px;
     }
 
@@ -1017,78 +1019,21 @@ img {
         font-size: 10px;
     }
 
-    .footer-info-section {
-        padding: 48px 0 22px;
-    }
-
-    .footer-container {
+    .footer-top-container {
         padding: 0 16px;
         gap: 24px;
     }
 
-    .footer-text-grid {
+    .footer-links-grid {
         gap: 20px;
     }
 
-    .footer-col h4 {
+    .footer-column h4 {
         font-size: 14px;
     }
 
-    .footer-col p,
-    .footer-col a {
+    .footer-column p,
+    .footer-column li {
         font-size: 12px;
     }
-    /* =========================
-   商品資訊文字微調（承接上一版風格）
-========================= */
-
-/* 標題 */
-.product-title {
-    font-size: 26px;          
-    font-weight: 500;
-    line-height: 1.5;         
-    letter-spacing: 0.5px;    
-    margin-bottom: 14px;
-}
-
-/* 價格 */
-.product-price {
-    font-size: 18px;
-    letter-spacing: 1px;
-    margin-bottom: 22px;
-}
-
-/* 描述 */
-.product-description {
-    font-size: 14px;
-    line-height: 1.9;         
-    color: #777;
-    margin-bottom: 22px;
-}
-
-.product-description p {
-    margin-bottom: 6px;
-}
-
-/* 規格 */
-.product-specs {
-    font-size: 14px;
-    line-height: 1.8;
-    margin-bottom: 26px;
-}
-
-.product-specs li {
-    margin-bottom: 6px;
-}
-
-/* 數量區 */
-.quantity-selector {
-    margin-bottom: 26px;
-}
-
-/* 按鈕（微調比例） */
-.add-to-cart-btn {
-    font-size: 15px;
-    letter-spacing: 1px;
-}
 }

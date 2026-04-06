@@ -8,24 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
 
     <header class="header">
         <div class="header-container">
             <div class="logo">Logo</div>
 
-            
-
             <nav class="nav-menu">
                 <a href="../index/index.html">首頁</a>
                 <a href="../about/about.html">品牌故事</a>
-                <a href="../Product/product.html">商品</a>
+                <a href="../Product/product.html" class="active">商品</a>
                 <a href="#">聯絡我們</a>
             </nav>
 
             <div class="nav-icons">
-                <a href="#">🔍搜尋商品</a>
+                <a href="#">🔍 搜尋商品</a>
                 <a href="#">會員</a>
                 <a href="#">🛒購物車 (2)</a>
             </div>
@@ -38,6 +35,7 @@
                 <div class="main-image">
                     <img src="images/main-candle.jpg" alt="白茶與檀木香氛蠟燭主圖">
                 </div>
+
                 <div class="thumbnail-list">
                     <img src="images/thumb3.jpg" alt="縮圖 1" class="thumbnail active">
                     <img src="images/thumb2.jpg" alt="縮圖 2" class="thumbnail">
@@ -48,7 +46,7 @@
             <div class="product-info">
                 <h1 class="product-title">白茶與檀木香氛蠟燭</h1>
                 <div class="product-price">NT$599</div>
-                
+
                 <div class="product-description">
                     <p>以白茶、雪松與淡雅木質調構成，</p>
                     <p>呈現安靜且溫柔的居家氣息。</p>
@@ -73,8 +71,7 @@
         </div>
     </main>
 
-   <footer class="footer">
-    <div class="recommend-section">
+    <section class="recommend-section">
         <h2 class="recommend-title">推薦商品</h2>
 
         <div class="recommend-carousel">
@@ -85,7 +82,7 @@
             <div class="recommend-slider" id="recommendSlider">
                 <div class="recommend-track">
                     <a href="product.html" class="product-card">
-                    <img src="images/rec1.jpg" alt="沉靜助眠精油">
+                        <img src="images/rec1.jpg" alt="沉靜助眠精油">
                         <div class="card-info">
                             <h3>沉靜助眠精油</h3>
                             <p class="card-subtitle">放鬆身心，打造療癒睡前時光</p>
@@ -94,7 +91,7 @@
                                 <span class="view-product">查看商品 &rarr;</span>
                             </div>
                         </div>
-                     </a>
+                    </a>
 
                     <a href="product.html" class="product-card">
                         <img src="images/rec2.jpg" alt="植萃保濕乳霜">
@@ -143,7 +140,6 @@
                             </div>
                         </div>
                     </a>
-
                 </div>
             </div>
 
@@ -151,44 +147,52 @@
                 &#10095;
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class="footer-info-section">
-        <div class="footer-container">
-                <div class="footer-logo-block">
-                    <div class="footer-logo">Logo</div>
+    <footer class="footer-main">
+        <div class="footer-top-container">
+            <div class="footer-logo-box">
+                <div class="footer-logo-square">Logo</div>
+            </div>
+
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <h4>Brand Name</h4>
+                    <p>致力於提供高品質產品，結合設計與生活美學，打造舒適且有質感的日常體驗。</p>
                 </div>
-                <div class="footer-text-grid">
-                    <div class="footer-col">
-                        <h4>Brand Name</h4>
-                        <p>致力於提供高品質產品，</p>
-                        <p>結合設計與生活美學，</p>
-                        <p>打造舒適且有質感的日常體驗。</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>快速連結</h4>
-                        <a href="../index/index.html">首頁</a>
-                        <a href="../Product/product.html">商品分類</a>
-                        <a href="../about/about.html">關於我們</a>
-                        <a href="#">聯絡我們</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>社群</h4>
-                        <a href="#">Instagram</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Line</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>客服資訊</h4>
-                        <p>服務時間：週一至週五 09:00 - 18:00</p>
-                        <p>Email：service@email.com</p>
-                        <p>電話：02-1234-5678</p>
-                    </div>
+
+                <div class="footer-column">
+                    <h4>快速連結</h4>
+                    <ul>
+                        <li><a href="../index/index.html">首頁</a></li>
+                        <li><a href="../about/about.html">關於我們</a></li>
+                        <li><a href="../Product/product.html">所有商品</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>社群</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Line</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>客服資訊</h4>
+                    <p>Email: service@email.com</p>
+                    <p>電話: 02-1234-5678</p>
+                    <p>服務時間: 09:00 - 18:00</p>
                 </div>
             </div>
         </div>
-        <div class="copyright">© 2026 Brand Name. All rights reserved.</div>
+
+        <div class="footer-bottom">
+            © 2026 Brand Name. All rights reserved.
+        </div>
     </footer>
+
     <script>
         const slider = document.getElementById("recommendSlider");
         const track = slider.querySelector(".recommend-track");
@@ -222,22 +226,19 @@
             }
         });
     </script>
+
     <script>
-    const thumbnails = document.querySelectorAll('.thumbnail');
-    const mainImage = document.querySelector('.main-image img');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
 
-    thumbnails.forEach(thumb => {
-    thumb.addEventListener('click', () => {
-        // 換主圖
-        mainImage.src = thumb.src;
-
-        // 移除 active
-        thumbnails.forEach(t => t.classList.remove('active'));
-
-        // 加上 active
-        thumb.classList.add('active');
-    });
-    });
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                mainImage.src = thumb.src;
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+            });
+        });
     </script>
+
 </body>
 </html>
